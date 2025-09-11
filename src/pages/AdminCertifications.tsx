@@ -244,3 +244,4 @@ const AdminCertifications: React.FC = () => {
 };
 
 export default AdminCertifications;
+

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Typography, Container, Card, CardMedia, CardContent, CardActions, Button, Chip, IconButton } from '@mui/material';
 import { Launch as LaunchIcon, GitHub as GitHubIcon } from '@mui/icons-material';
 
-const API_BASE_URL = 'http://localhost:9097';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 interface Project {
   id: number;

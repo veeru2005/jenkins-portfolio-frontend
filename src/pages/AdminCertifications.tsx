@@ -6,7 +6,7 @@ import {
 import { Edit as EditIcon, Delete as DeleteIcon } from '@mui/icons-material';
 import AdminNavbar from './AdminNavbar';
 
-const API_URL = 'http://localhost:9097/api/portfolio';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const getAuthToken = () => localStorage.getItem('jwtToken') || '';
 
@@ -50,7 +50,7 @@ const AdminCertifications: React.FC = () => {
   const fetchCertifications = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${API_URL}/certifications`);
+      const response = await fetch(`${API_BASE_URL}/api/portfolio/certifications`);
       if (!response.ok) throw new Error('Failed to fetch certifications');
       const data: Certification[] = await response.json();
       setCertifications(data);
@@ -117,8 +117,8 @@ const AdminCertifications: React.FC = () => {
       const token = getAuthToken();
       const isEdit = !!certForm.id;
       const url = isEdit
-        ? `${API_URL}/admin/certifications/${certForm.id}`
-        : `${API_URL}/admin/certifications`;
+        ? `${API_BASE_URL}/admin/certifications/${certForm.id}`
+        : `${API_BASE_URL}/admin/certifications`;
       const method = isEdit ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -144,7 +144,7 @@ const AdminCertifications: React.FC = () => {
   const deleteCertification = async (id: number) => {
     try {
       const token = getAuthToken();
-      const response = await fetch(`${API_URL}/admin/certifications/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/admin/certifications/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

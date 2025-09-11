@@ -25,7 +25,7 @@ import {
   GitHub as GitHubIcon
 } from '@mui/icons-material';
 
-const API_BASE_URL = 'http://localhost:9097';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 interface Project {
   id: number;

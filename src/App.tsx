@@ -13,7 +13,6 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminOTP = lazy(() => import("./pages/AdminOTP"));
 const AdminPanel = lazy(() => import("./pages/AdminPanel"));
-const AdminResetPassword = lazy(() => import("./pages/AdminResetPassword"));
 const AdminProjects = lazy(() => import("./pages/AdminProjects"));
 const AdminCertifications = lazy(() => import("./pages/AdminCertifications"));
 
@@ -44,7 +43,6 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/admin/login" element={<AdminLogin />} />
               <Route path="/admin/otp" element={<AdminOTP />} />
-              <Route path="/admin/reset" element={<AdminResetPassword />} />
 
               {/* --- Admin Routes --- */}
               <Route path="/admin" element={<AdminPanel />} />

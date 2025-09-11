@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Container, Typography, Card, CardContent, CardMedia, CircularProgress } from '@mui/material';
 
-const API_URL = 'http://localhost:9097/api/portfolio';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 // --- Interface updated to match the final backend entity ---
 interface Certification {
@@ -57,7 +57,7 @@ const EducationCertifications = () => {
     const fetchCertifications = async () => {
       setLoadingCerts(true);
       try {
-        const response = await fetch(`${API_URL}/certifications`);
+        const response = await fetch(`${API_BASE_URL}/api/portfolio/certifications`);
         if (!response.ok) throw new Error('Network response was not ok');
         const data: Certification[] = await response.json();
         setCertificationsState(data);

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import ArrowBack from '@mui/icons-material/ArrowBack';
 import MarkEmailRead from '@mui/icons-material/MarkEmailRead';
 
-const API_URL = 'http://localhost:9097/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const AdminOTP: React.FC = () => {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ const AdminOTP: React.FC = () => {
     }
 
     try {
-      const response = await fetch(`${API_URL}/admin/verify-otp`, {
+      const response = await fetch(`${API_BASE_URL}/api/admin/verify-otp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: pendingEmail, otp }),

@@ -19,7 +19,7 @@ import Person from '@mui/icons-material/Person';
 import Email from '@mui/icons-material/Email';
 import Lock from '@mui/icons-material/Lock';
 
-const API_URL = 'http://localhost:9097/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const AdminLogin: React.FC = () => {
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ const AdminLogin: React.FC = () => {
     }
     setLoading(true);
     try {
-      const response = await fetch(`${API_URL}/admin/login`, {
+      const response = await fetch(`${API_BASE_URL}/api/admin/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),

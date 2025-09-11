@@ -54,11 +54,14 @@ const Contact: React.FC = () => {
     
     try {
       // We are now ONLY calling your backend to send the email.
-      const response = await fetch("http://localhost:9097/api/contact/send", {
+      const API_BASE_URL = import.meta.env.VITE_API_URL;
+
+      const response = await fetch(`${API_BASE_URL}/api/contact/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
       });
+      
 
       if (!response.ok) {
         const errorBody = await response.text();

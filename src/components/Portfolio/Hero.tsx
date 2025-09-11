@@ -15,7 +15,7 @@ import {
 } from '@mui/icons-material';
 
 const Hero = () => {
-  const skills = ['React', 'Node.js', 'MongoDB', 'SpringBoot', 'MySQL', 'JavaScript / TypeScript'];
+  const skills = ['React', 'JavaScript / TypeScript', 'SpringBoot', 'MySQL', 'Node.js', 'MongoDB'];
 
   return (
     <Box

@@ -11,30 +11,27 @@ import {
 } from '@mui/icons-material';
 
 const About: React.FC = () => {
-  const skills = [
-    {
-      name: 'JavaScript/TypeScript',
-      icon: (
-        <Box sx={{ display: 'flex', gap: 2 }}>
-          <img src="/javascript.svg" alt="JavaScript" style={{ width: 48, height: 48 }} />
-          <img src="/typescript.svg" alt="TypeScript" style={{ width: 48, height: 48 }} />
-        </Box>
-      )
-    },
-    { name: 'React.js', icon:<img src="/public/react.svg" alt="React.js" style={{ width: 48, height: 48 }} /> },
-    { name: 'SpringBoot', icon: <img src="/public/springboot.svg" alt="SpringBoot" style={{ width: 48, height: 48 }} /> },
-    { name: 'MongoDB', icon: <img src="/public/mongodb.svg" alt="MongoDB" style={{ width: 48, height: 48 }} /> },
-    { name: 'AWS/Cloud', icon: <img src="/public/aws.svg" alt="AWS/Cloud" style={{ width: 48, height: 48 }} /> },
-    { name: 'Docker', icon: <img src="/public/docker.svg" alt="Docker" style={{ width: 48, height: 48 }} /> }
+  const technicalSkills = [
+    { name: 'React', icon: <img src="/react.svg" alt="Docker" style={{ width: 48, height: 48 }} /> },
+    { name: 'TypeScript', icon:<img src="/typescript.svg" alt="TypeScript" style={{ width: 48, height: 48 }} /> },
+    { name: 'JavaScript', icon: <img src="/javascript.svg" alt="JavaScript" style={{ width: 48, height: 48 }} /> },
+    { name: 'SpringBoot', icon: <img src="/springboot.svg" alt="SpringBoot" style={{ width: 48, height: 48 }} /> },
+    { name: 'MySQL', icon: <img src="/mysql.svg" alt="MongoDB" style={{ width: 48, height: 48 }} /> },
+    { name: 'MongoDB', icon: <img src="/mongodb.svg" alt="MongoDB" style={{ width: 48, height: 48 }} /> },
+    { name: 'AWS/Cloud', icon: <img src="/aws.svg" alt="AWS/Cloud" style={{ width: 48, height: 48 }} /> },
+    { name: 'Docker', icon: <img src="/docker.svg" alt="AWS/Cloud" style={{ width: 48, height: 48 }} /> },
+
+
+
   ];
 
   const editingSkills = [
-    { name: 'Photoshop', icon: <img src="/public/photoshop.svg" alt="Photoshop" style={{ width: 48, height: 48 }} /> },
-    { name: 'Premiere Pro', icon: <img src="/public/premiere-pro.svg" alt="Premiere Pro" style={{ width: 48, height: 48 }} /> },
-    { name: 'Photopea', icon: <img src="/public/photopea.svg" alt="Photoshop" style={{ width: 48, height: 48 }} /> },
-    { name: 'DaVinci Resolve', icon: <img src="/public/davinci.svg" alt="DaVinci Resolve" style={{ width: 48, height: 48 }} /> },
-    { name: 'Canva', icon: <img src="/public/canva.svg" alt="Canva" style={{ width: 48, height: 48 }} /> },
-    { name: 'CapCut', icon: <img src="/public/capcut.svg" alt="Photoshop" style={{ width: 48, height: 48 }} /> },
+    { name: 'Photoshop', icon: <img src="/photoshop.svg" alt="Photoshop" style={{ width: 48, height: 48 }} /> },
+    { name: 'Premiere Pro', icon: <img src="/premiere-pro.svg" alt="Premiere Pro" style={{ width: 48, height: 48 }} /> },
+    { name: 'Photopea', icon: <img src="/photopea.svg" alt="Photopea" style={{ width: 48, height: 48 }} /> },
+    { name: 'DaVinci Resolve', icon: <img src="/davinci.svg" alt="DaVinci Resolve" style={{ width: 48, height: 48 }} /> },
+    { name: 'Canva', icon: <img src="/canva.svg" alt="Canva" style={{ width: 48, height: 48 }} /> },
+    { name: 'CapCut', icon: <img src="/capcut.svg" alt="CapCut" style={{ width: 48, height: 48 }} /> },
   ];
 
   const services = [
@@ -70,6 +67,8 @@ const About: React.FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        height: '100%',
+        flex: 1,
         gap: 1.5,
         textAlign: 'center',
         border: '1px solid #e0e0e0',
@@ -152,8 +151,8 @@ const About: React.FC = () => {
             <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 4, color: '#1976d2', textAlign: { xs: 'center' } }}>
               Technical Skills
             </Typography>
-            <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1.5 }}>
-              {skills.map(renderSkillBox)}
+            <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1.5, gridAutoRows: '1fr' }}>
+              {technicalSkills.map(renderSkillBox)}
             </Box>
           </Box>
 
@@ -162,7 +161,7 @@ const About: React.FC = () => {
             <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 4, color: '#1976d2', textAlign: { xs: 'center' } }}>
               Editing Skills
             </Typography>
-            <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1.5 }}>
+            <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1.5, gridAutoRows: '1fr' }}>
               {editingSkills.map(renderSkillBox)}
             </Box>
           </Box>

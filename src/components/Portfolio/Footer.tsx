@@ -68,8 +68,8 @@ const Footer = () => {
                 lineHeight: 1.6
               }}
             >
-              Full Stack Developer passionate about creating innovative web solutions 
-              and building exceptional digital experiences that make a difference.
+            As a passionate Graphic Designer, I specialize in photo and video editing, creating visually stunning content that captures attention. I channel this creative expertise into my work as a Full Stack Developer, where I build responsive and user-friendly web applications.
+
             </Typography>
             <Box sx={{ display: 'flex', gap: 1 }}>
               {socialLinks.map((social, index) => (

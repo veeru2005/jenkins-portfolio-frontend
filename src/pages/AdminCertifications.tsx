@@ -195,7 +195,7 @@ const AdminCertifications: React.FC = () => {
               <CardMedia component="img" image={c.imageUrl || '/placeholder.svg'} alt={c.name} sx={{ height: 300, objectFit: 'cover' }} />
               <CardContent sx={{ flexGrow: 1, p:3}}>
                 <Typography gutterBottom variant="h5" sx={{ fontWeight: 'bold' }}>{c.name}</Typography>
-                <Typography variant="subtitle1" color="text.secondary">{c.issuer} • {c.year}</Typography>
+                <Typography variant="subtitle1"  sx={{ color: '#1976d2', mb: 1 }}>{c.issuer} • {c.year}</Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>{c.description}</Typography>
               </CardContent>
               <Divider />

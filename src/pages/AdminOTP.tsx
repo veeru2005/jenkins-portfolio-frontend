@@ -131,13 +131,13 @@ const AdminOTP: React.FC = () => {
       </Button>
 
       <Grid container spacing={6} alignItems="center" justifyContent="center" sx={{ maxWidth: '1000px' }}>
-        <Grid item component="div" xs={12} md={7} sx={{ display: 'flex', justifyContent: 'center', order: { xs: 2, md: 1 } }}>
+        <Grid item xs={12} md={7} sx={{ display: 'flex', justifyContent: 'center', order: { xs: 2, md: 1 } }}>
           <div dangerouslySetInnerHTML={{
             __html: `<lottie-player src="/Login.json" background="transparent" speed="1" style="width:100%; max-width:500px;" loop autoplay></lottie-player>`
           }} />
         </Grid>
 
-        <Grid item component="div" xs={12} md={5} sx={{ order: { xs: 1, md: 2 } }}>
+        <Grid item xs={12} md={5} sx={{ order: { xs: 1, md: 2 } }}>
           <Paper
             elevation={0}
             sx={{

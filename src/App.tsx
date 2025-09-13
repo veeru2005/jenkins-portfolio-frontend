@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react"; // --- 1. IMPORT LAZY & SUSPENSE
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-// --- 2. CHANGE PAGES TO BE LAZY-LOADED ---
+// Pages are correctly lazy-loaded
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
@@ -35,8 +35,8 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          {/* --- 3. WRAP ROUTES IN SUSPENSE --- */}
+        {/* THIS IS THE CRUCIAL FIX: Add the basename property */}
+        <BrowserRouter basename="/portfolio_front1">
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               {/* --- Public Routes --- */}
